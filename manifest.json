@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "NFL+ Commercial Break Silencer",
+  "description": "Mutes the NFL+ commercial break music and unmutes when it finishes",
+  "version": "1.0",
+  "action": {
+    "default_icon": "hello_extensions.png"
+  },
+  "permissions": ["activeTab", "scripting", "tabCapture"],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["script.js"],
+      "matches": [
+        "https://*.youtube.com/*",
+        "http://*.youtube.com/*"
+      ]
+    }
+  ]
+}
